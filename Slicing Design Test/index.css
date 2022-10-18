@@ -1,0 +1,364 @@
+@font-face {
+	font-family: "ProximaNova";
+	font-display: fallback;
+	font-weight: 100;
+	src: local("ProximaNova"), url("./assets/fonts/ProximaNova/ProximaNova-Thin.otf") format("opentype");
+}
+@font-face {
+	font-family: "ProximaNova";
+	font-display: fallback;
+	font-weight: 200;
+	src: local("ProximaNova"), url("./assets/fonts/ProximaNova/Proxima\ Nova\ Light.otf") format("opentype");
+}
+@font-face {
+	font-family: "ProximaNova";
+	font-display: fallback;
+	font-weight: 300;
+	src: local("ProximaNova"), url("./assets/fonts/ProximaNova/Proxima\ Nova\ Light.otf") format("opentype");
+}
+@font-face {
+	font-family: "ProximaNova";
+	font-display: fallback;
+	font-weight: 400;
+	src: local("ProximaNova"), url("./assets/fonts/ProximaNova/ProximaNova-Reg.otf") format("opentype");
+}
+@font-face {
+	font-family: "ProximaNova";
+	font-display: fallback;
+	font-weight: 500;
+	src: local("ProximaNova"), url("./assets/fonts/ProximaNova/Proxima\ Nova\ Semibold.otf") format("opentype");
+}
+@font-face {
+	font-family: "ProximaNova";
+	font-display: fallback;
+	font-weight: 600;
+	src: local("ProximaNova"), url("./assets/fonts/ProximaNova/ProximaNova-Bold.otf") format("opentype");
+}
+@font-face {
+	font-family: "ProximaNova";
+	font-display: fallback;
+	font-weight: 700;
+	src: local("ProximaNova"), url("./assets/fonts/ProximaNova/ProximaNova-Extrabold.otf") format("opentype");
+}
+
+:root {
+	--pry-bg-color: #23123a;
+	--text-light: #ffffff;
+	--text-header: #373737;
+	--text-dark: #000000;
+	--text-link: #1194f6;
+	--green-cl: #59d8d1;
+	--orange-cl: #fa6e3d;
+	--shade-01: #e3e5e5;
+	--bg-shade-01: #f1f5f8;
+	--star-size: 60px;
+	--star-color: #fff;
+	--star-background: #59d8d1;
+}
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family: "ProximaNova", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
+		Droid Sans, Helvetica Neue, sans-serif;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+*,
+body {
+	box-sizing: border-box;
+}
+body {
+	max-width: 1448px;
+	margin: 0 auto;
+	color: var(--text-dark);
+}
+.link-text {
+	color: var(--text-link);
+}
+
+.body-container {
+	width: 100%;
+	height: 100%;
+}
+header {
+	height: 100%;
+	padding-top: 2em;
+	background-color: var(--pry-bg-color);
+}
+header .navbar-default {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	background-color: var(--text-light);
+}
+header .navbar-default.mobile {
+	display: none;
+}
+.navbar-default .nav-link_blk {
+	flex: 1;
+	padding: 1em;
+	width: 100%;
+	text-align: center;
+	border-right: 1px solid var(--shade-01);
+	font-weight: 700;
+}
+.navbar-default .nav-link_blk:last-child {
+	border-right: none;
+}
+.body-container main > section.hero {
+	position: relative;
+	max-height: 700px;
+	background-color: var(--pry-bg-color);
+	background-image: url("./assets/hero_section.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+}
+section.hero > .bg-hero_banner {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+section.hero > .bg-hero_banner img {
+	width: 100%;
+	height: 100%;
+}
+section.hero > .hero-container {
+	position: relative;
+	z-index: 1;
+	color: var(--text-light);
+	padding: 4em 3em;
+}
+section.hero > .hero-container .hero-text {
+	font-weight: 700;
+	font-size: clamp(3em, 9vw, 6em);
+	line-height: 100%;
+	margin: 0;
+}
+section.hero > .hero-container .hero-illustration {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	margin-top: 2em;
+}
+section.hero > .hero-container .hero-illustration img {
+	width: 100%;
+	height: 100%;
+	max-width: 530px;
+	max-height: 300px;
+}
+section.credit_opportunities {
+	background-color: var(--bg-shade-01);
+	padding: 2em 3em;
+}
+.credit_opportunities .container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--text-light);
+}
+.credit_opportunities .section-title {
+	font-weight: 700;
+	font-size: clamp(1.3em, 3vw, 2em);
+	line-height: 120%;
+	color: var(--text-header);
+	margin-bottom: 1em;
+}
+.credit_opportunities .section-title sup {
+	font-size: 14px;
+}
+.credit_opportunities .container .section-inner {
+	padding: 1em 2em;
+	width: 90%;
+	height: 100%;
+}
+.credit_opportunities .container .section-inner .section-header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 1em;
+}
+.credit_opportunities .section-header .title,
+.credit_opportunities .section-header .review_blk {
+	display: flex;
+}
+.credit_opportunities .section-header .title {
+	font-weight: 500;
+	margin: 0;
+}
+.credit_opportunities .section-header .review_blk .stars {
+	margin-right: 0.6em;
+}
+.rating {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: center;
+}
+
+.rating > input {
+	display: none;
+}
+
+.rating > label {
+	position: relative;
+	width: 1.1em;
+	font-size: 16px;
+	color: var(--green-cl);
+	cursor: pointer;
+}
+
+.rating > label::before {
+	content: "\2605";
+	position: absolute;
+	opacity: 0;
+}
+
+.rating > label:hover:before,
+.rating > label:hover ~ label:before {
+	opacity: 1 !important;
+	margin-top: 2px;
+	margin-left: 1.8px;
+}
+
+.rating > input:checked ~ label:before {
+	opacity: 1;
+	margin-top: 2px;
+	margin-left: 1.8px;
+}
+
+.rating:hover > input:checked ~ label:before {
+	opacity: 0.4;
+}
+
+.credit_opportunities .section-header .review_blk .review_fig {
+	font-weight: 500;
+}
+.credit_opportunities .section-main .payment_and_info {
+	display: flex;
+	align-items: flex-start;
+	height: 100%;
+}
+.credit_opportunities .section-main .payment_and_info .section-payment .top {
+	display: flex;
+	width: 320px;
+}
+.credit_opportunities .payment_and_info .section-payment .card-info {
+	width: 200px;
+	height: 127px;
+	margin-right: 2em;
+}
+.credit_opportunities .payment_and_info .section-payment .card-info img {
+	width: 100%;
+	height: 100%;
+}
+.credit_opportunities .payment_and_info .section-payment .approval-status {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	font-weight: 500;
+}
+.credit_opportunities .payment_and_info .section-payment .approval-status sup {
+	font-size: 8px;
+}
+.credit_opportunities .payment_and_info .section-payment .approval-status .card-status {
+	background-color: var(--green-cl);
+	padding: 0.4em 0;
+	border-radius: 15px;
+	font-weight: 600;
+	color: var(--text-light);
+}
+.credit_opportunities .section-main .payment_and_info .section-information {
+	margin-left: 1em;
+}
+.credit_opportunities .section-main .payment_and_info .section-information ul li {
+	font-weight: 500;
+	font-size: 18px;
+	margin-bottom: 0.5em;
+}
+.credit_opportunities .section-main .apply_now-btn {
+	width: 320px;
+	padding: 0.9em;
+	color: var(--text-light);
+	background-color: var(--orange-cl);
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	margin: 1em 0;
+	font-weight: 700;
+	font-size: 18px;
+}
+.credit_opportunities .section-main .apply_now-btn.mobile {
+	display: none;
+}
+
+.credit_opportunities .section-main hr {
+	border: 1px solid var(--shade-01);
+	margin: 1em 0;
+}
+.credit_opportunities .section-main .details_fees {
+	font-weight: 500;
+}
+
+@media screen and (max-width: 850px) {
+	header .navbar-default {
+		display: none;
+	}
+	header .navbar-default.mobile {
+		display: flex;
+	}
+	section.hero > .hero-container {
+		padding: 2em 1.5em;
+	}
+	.body-container main > section.hero {
+		background-image: url("./assets//hero_section-mobile.svg");
+	}
+	section.credit_opportunities {
+		padding: 0;
+		padding-top: 1em;
+	}
+	.credit_opportunities .section-title {
+		padding: 0 1em;
+	}
+	.credit_opportunities .container .section-inner {
+		padding: 1em;
+		width: 100%;
+		height: 100%;
+	}
+	.credit_opportunities .section-header .review_blk {
+		display: none;
+	}
+	.credit_opportunities .section-main .payment_and_info {
+		flex-wrap: wrap;
+	}
+	.credit_opportunities .section-main .payment_and_info .section-information {
+		margin-left: 0;
+	}
+	.credit_opportunities .section-main .payment_and_info .section-information ul li {
+		margin-left: -1.3em;
+		margin-bottom: 1em;
+	}
+	.credit_opportunities .section-main .apply_now-btn {
+		display: none;
+		max-width: 400px;
+		width: 100%;
+	}
+	.credit_opportunities .section-main .apply_now-btn.mobile {
+		display: block;
+	}
+	.credit_opportunities .section-main .payment_and_info .section-payment .top {
+		flex-wrap: wrap;
+		width: 100%;
+	}
+}
